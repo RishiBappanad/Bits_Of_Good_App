@@ -22,7 +22,8 @@
             width: 350px;
             text-align: center;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            transform: scale(1);
+            position: relative;
+            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -67,23 +68,51 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         .card .button:hover {
             background-color: #16a085;
         }
+
+        .passion-text {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            width: 100%;
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+            transition: bottom 0.5s ease;
+        }
+
+        .card.show-passion .passion-text {
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
+    <div class="card" id="infoCard">
         <img src="https://via.placeholder.com/120" alt="Profile Picture">
         <h2>Rishi Bappanad</h2>
         <p>
-            I'm a second-year Computer Science major passionate about creating walkable communities through increased transit use. 
-            From Atlanta, GA, I aim to make a positive impact using technology.
+            I'm a second-year Computer Science major passionate about technology and creating meaningful solutions. 
+            From Atlanta, GA, I aim to make a positive impact.
         </p>
-        <a href="#" class="button">Connect</a>
+        <button class="button" onclick="togglePassion()">Learn More</button>
+        <div class="passion-text">
+            I’m passionate about creating walkable communities by increasing transit use, making cities more livable and sustainable for everyone.
+        </div>
     </div>
+
+    <script>
+        function togglePassion() {
+            const card = document.getElementById('infoCard');
+            card.classList.toggle('show-passion');
+        }
+    </script>
 </body>
 </html>
