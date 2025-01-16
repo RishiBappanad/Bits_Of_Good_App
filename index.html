@@ -74,10 +74,16 @@
             color: #ecf0f1;
             transform: rotateY(180deg);
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            text-align: center;
-            padding: 20px;
+            align-items: flex-start;
+            text-align: left;
+            padding: 20px 25px;
+        }
+
+        .card .back p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
         }
 
         .button {
@@ -115,6 +121,7 @@
                 <p>
                     I’m passionate about creating walkable communities by increasing transit use, making cities more livable and sustainable for everyone.
                 </p>
+                <button class="button" onclick="flipCard()">Show Less</button>
             </div>
         </div>
     </div>
